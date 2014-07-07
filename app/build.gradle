@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "themagic.giftos"
-        minSdkVersion 17
+        minSdkVersion 19
         targetSdkVersion 20
         versionCode 1
         versionName "1.0"

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="ab_dark_trans">#80000000</color>
+    <color name="primary_purple">#7c4dff</color>
+    <color name="secondary_purple">#512da8</color>
+</resources>
