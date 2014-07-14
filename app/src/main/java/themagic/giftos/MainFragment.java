@@ -3,6 +3,7 @@ package themagic.giftos;
 import android.app.Fragment;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,7 @@ import com.makeramen.RoundedDrawable;
 public class MainFragment extends Fragment {
 
   private ImageView gif;
-  int cornerRadius = 200;
+  int cornerRadius = 230;
 
   public MainFragment() {
         // Required empty public constructor
@@ -30,13 +31,12 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+      Ion.getDefault(getActivity()).configure().setLogging("MyLogs", Log.DEBUG);
+      // Inflate the layout for this fragment
       View view = inflater.inflate(R.layout.fragment_main, container, false);
 //      RoundedImageView gif = (RoundedImageView) view.findViewById(R.id.roundedView);
        gif = (ImageView) view.findViewById(R.id.gif);
 
-//      Picasso.with(getActivity()).load("http://media.giphy.com/media/BX17E98mJ45TG/200.gif").into(gif);
-//      RoundedImageView iv = new RoundedImageView(getActivity());
       loadRounded();
 
       return view;
@@ -61,9 +61,12 @@ public class MainFragment extends Fragment {
     };
 
     public void loadRounded() {
+      Log.d("Gif Image Fragment", "Image Loading...");
       Ion.with(gif)
               .resize(cornerRadius, cornerRadius)
               .centerCrop()
+              .placeholder(R.drawable.gif_placeholder)
+              .error(R.drawable.gif_error)
               .transform(trans)
               .load("http://media.giphy.com/media/BX17E98mJ45TG/200.gif");
     }

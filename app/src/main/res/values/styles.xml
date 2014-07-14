@@ -1,23 +1,24 @@
 <resources>
 
-    <!-- Base application theme. -->
     <style name="MyTheme" parent="@android:style/Theme.Holo.Light">
-        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionBarStyle">@style/MyTheme.MyActionBar</item>
+        <item name="android:windowContentOverlay">@drawable/actionbar_shadow</item>
     </style>
 
-    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
-        <item name="android:titleTextStyle">@style/TitleTextStyle</item>
-        <item name="android:background">@color/primary_purple</item>
+    <style name="MyTheme.MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:titleTextStyle">@style/MyTheme.MyActionBar.TitleTextStyle</item>
         <item name="android:displayOptions">showTitle</item>
+        <item name="android:background">@drawable/actionbar_custom</item>
     </style>
 
-    <style name="TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+    <style name="MyTheme.MyActionBar.TitleTextStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
         <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="NoActionBar">
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowTitleSize">0dp</item>
+    <style name="NoActionBarTheme" parent="@android:style/Theme.Holo.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
     </style>
+
 
 </resources>
