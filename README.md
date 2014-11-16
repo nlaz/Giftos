@@ -1,4 +1,4 @@
-![alt text](http://giftos_mock.png)
+![alt text](https://raw.githubusercontent.com/nlaz/Giftos/master/giftos_mock.png)
 
 (Under Development)
 ===================
